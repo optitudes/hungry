@@ -3,6 +3,7 @@
  * Descripción: implementacion de las funciones para la libreria de hungry.h
  * Autor      : Ivan Cardona, Juan Rojas, Laura Maldonado
  * Fecha      : Noviembre 2020
+ * Licencia   : GNU GPL v3
  */
  
 #include <stdio.h>
