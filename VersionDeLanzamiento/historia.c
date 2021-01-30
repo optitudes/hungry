@@ -581,6 +581,8 @@ int n30(Datos jugador)
 	
 	clrscr();
 	imprimirEstadisticas(jugador);
+        
+        return eleccion;
 }
 //procedimiento que relata como el jugador despues de decidir lucha termina cayendo por el barranco, y quedando inconsciente
 void n25(Datos jugador)
