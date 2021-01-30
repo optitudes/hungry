@@ -38,7 +38,7 @@ int main()
 	{
 		//inicia la historia
 		desarrollarJuego();
-		continuar=leerEntero("Desea jugar de nuevo?\n1: si\n2: no");
+		continuar=leerEntero("Desea jugar de nuevo?\n1: si\n2: no \n: ");
 	}while(continuar==1);
 	return 0;
 }

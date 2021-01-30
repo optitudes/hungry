@@ -48,8 +48,7 @@ void desarrollarJuego()
 		//elecion 1= salvar al perro
 		if(eleccion==1) {n6(jugador);} else{n7(jugador);}
 		eleccion=n8(&jugador);
-		if (eleccion==1) {n11(jugador);} else{n12(jugador);}
-		
+ 		if (eleccion==1) {n11(jugador);} else{n12(jugador);}
 		terminarJ=imprimirMuerte(jugador);
 		if(terminarJ==1){goto final1;}
 
@@ -161,7 +160,7 @@ void leerEstadisticas(Datos *jugador)
 		jugador->sexo=tolower(jugador->sexo);	
 	}
 	//asignamos las estadisticas generales del jugador
-	jugador->estadoA  =2;
+	jugador->estadoA  =3;
 	jugador->accionesB=0;
 	jugador->accionesM=0;
 	jugador->salud    =100;
@@ -172,11 +171,11 @@ void imprimirEstadisticas(Datos jugador)
 	printf("--------------------------\n");
 	if (jugador.estadoA>2)
 	{
-		printf("((^v^ ))");		
+		printf("((^w^ ))");		
 	}
 	else
 	{
-		if (jugador.estadoA==2) {printf("(0_0)");} else {printf("(;-; )");}			
+		if (jugador.estadoA==2) {printf("(O_O )");} else {printf("(T_T )");}			
 	}
 	printf("  salud=%.1f\n",jugador.salud);
 	printf("--------------------------\n");
@@ -196,13 +195,12 @@ int validarEleccion()
 	}
 	
 
-    eleccion=atoi(caracterEleccion);
+        eleccion=atoi(caracterEleccion);
 	return eleccion;
 }
 //procedimiento que imprime la muerte del jugador durante el desarrollo del juego
 int imprimirMuerte(Datos jugador)
 {
-	char continuar;
 
 	if(jugador.salud<=0)
 	{
@@ -212,13 +210,16 @@ int imprimirMuerte(Datos jugador)
 	}
 	else
 	{
-		if (jugador.estadoA==0)
+		if (jugador.estadoA<=0)
 		{
 			printf("%s no puede más mentalmente, se siente insuficiente y que no merece la vida\n",jugador.nombre);
 			printf("sí que toma la desición de dejar de luchar, se sienta y espera a que algún infectado lo \n  ");
 			printf("encuentre y lo libere de su miserable vida...");
 			return 1;
-		}
+		}else
+                {
+                    return 0;
+                }
 	}
 
 }
